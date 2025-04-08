@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Configuration\" />
+        <Folder Include="Logging\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SupervisoryControl.Core\SupervisoryControl.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MySql.Data" Version="9.2.0" />
+      <PackageReference Include="Prism.Unity" Version="9.0.537" />
+      <PackageReference Include="Unity" Version="5.11.10" />
+    </ItemGroup>
+
+</Project>

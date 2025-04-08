@@ -1,0 +1,10 @@
+﻿<Window x:Class="SupervisoryControl.Shell.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Supervisory Control" Height="350" Width="525">
+    <StackPanel Margin="20" VerticalAlignment="Center">
+        <TextBlock Text="{Binding WelcomeMessage}" FontSize="16" Margin="0 0 0 10"/>
+        <Button Content="连接数据库" Command="{Binding ConnectCommand}" Width="150" Height="35"/>
+        <TextBlock Text="{Binding ConnectionResult}" Margin="0 10 0 0" Foreground="DarkGreen"/>
+    </StackPanel>
+</Window>
