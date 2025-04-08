@@ -9,7 +9,7 @@ namespace SupervisoryControl.Shell;
 /// <summary>
 ///     Interaction logic for App.xaml
 /// </summary>
-public partial class App {
+public partial class App :PrismApplication{
     protected override Window CreateShell() {
         return Container.Resolve<MainWindow>();
     }
