@@ -4,12 +4,16 @@ using SupervisoryControl.Infrastructure.Services;
 
 namespace SupervisoryControl.Infrastructure.DependencyInjection;
 
-public class DependencyInjectionSetup {
+public static class DependencyInjectionSetup {
     public static void RegisterTypes(IContainerRegistry containerRegistry) {
         containerRegistry.Register<IMainService, MainService>();
     }
 
-    public static void RegisterMySQL(IContainerRegistry containerRegistry) {
+    public static void RegisterMySql(IContainerRegistry containerRegistry) {
         containerRegistry.Register<IMySqlService, MySqlService>();
+    }
+
+    public static void RegisterServices(IContainerRegistry containerRegistry){
+        containerRegistry.Register<IUserService, UserService>();
     }
 }

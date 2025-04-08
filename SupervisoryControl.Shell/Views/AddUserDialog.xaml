@@ -1,12 +1,32 @@
 ﻿<Window x:Class="SupervisoryControl.Shell.Views.AddUserDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:SupervisoryControl.Shell.Views"
-        mc:Ignorable="d"
-        Title="AddUserDialog" Height="450" Width="800">
-    <Grid>
+        Title="添加用户" Height="250" Width="300" 
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <!-- 用户名输入 -->
+        <TextBlock Text="用户名:" Grid.Row="0"/>
+        <TextBox Grid.Row="1" Text="{Binding Username}" Margin="0 5"/>
+        
+        <!-- 密码输入 -->
+        <TextBlock Text="密码:" Grid.Row="2" Margin="0 10"/>
+        <PasswordBox Grid.Row="3" Password="{Binding Password}" Margin="0 5"/>
+        
+        <!-- 操作按钮 -->
+        <StackPanel Grid.Row="4" Orientation="Horizontal" 
+                    HorizontalAlignment="Right" Margin="0 15">
+            <Button Content="保存" Command="{Binding SaveUserCommand}" 
+                    Width="80" Margin="0 0 10 0"/>
+            <Button Content="取消" Command="{Binding CloseCommand}" 
+                    Width="80"/>
+        </StackPanel>
     </Grid>
 </Window>

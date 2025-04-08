@@ -3,10 +3,21 @@ using SupervisoryControl.Core.Interfaces;
 
 namespace SupervisoryControl.Infrastructure.Services;
 public class MySqlService :IMySqlService {
-    private readonly string _connectionString = "server=localhost;port=3306;user=root;password=root;database=test_go";
     public bool TryConnect(out string message) {
-        try {
-            using var connection = new MySqlConnection(_connectionString);
+        
+        var builder = new MySqlConnectionStringBuilder{
+            Server = "127.0.0.1",
+            Database = "test_go",
+            UserID = "root",
+            Password = "root",
+            Port = 3306,
+            CharacterSet = "utf8mb4",
+            Pooling = true,
+            ConnectionTimeout = 15
+        };
+        
+        try{
+            using var connection = new MySqlConnection(builder.ConnectionString);
             connection.Open();
             message = "连接成功！";
             return true;

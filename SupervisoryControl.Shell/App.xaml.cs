@@ -1,6 +1,8 @@
 ﻿using SupervisoryControl.Infrastructure.DependencyInjection;
 using SupervisoryControl.Shell.Views;
 using System.Windows;
+using SupervisoryControl.Core.Interfaces;
+using SupervisoryControl.Infrastructure.Services;
 
 namespace SupervisoryControl.Shell;
 
@@ -14,9 +16,11 @@ public partial class App {
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry) {
         DependencyInjectionSetup.RegisterTypes(containerRegistry);
-        DependencyInjectionSetup.RegisterMySQL(containerRegistry);
+        DependencyInjectionSetup.RegisterMySql(containerRegistry);
+        DependencyInjectionSetup.RegisterServices(containerRegistry);
     }
 
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) {
+        // TODO:
     }
 }
